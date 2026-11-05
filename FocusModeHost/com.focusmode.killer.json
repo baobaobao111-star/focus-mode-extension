@@ -1,0 +1,9 @@
+{
+  "name": "com.focusmode.killer",
+  "description": "Python Process Killer for Focus Mode",
+  "path": "D:\\FocusModeHost\\host.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://chrome://extensions/?errors=mmhchjpjcmiefaledoeaoecnjohkfpid/"
+  ]
+}

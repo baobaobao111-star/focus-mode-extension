@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Focus Mode: Shorts & Reels Blocker",
+  "version": "1.0.0",
+  "description": "Quản lý thời gian, chặn Shorts/Reels, trang web gây xao nhãng và chế độ kỷ luật thép.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.facebook.com/*",
+    "*://*.instagram.com/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="header">
+        <h2>🛡️ FOCUS MODE</h2>
+        <button id="darkModeToggle" class="theme-btn" title="Giao diện Tối/Sáng">🌙</button>
+    </div>
+
+    <!-- 1. POMODORO CARD (LẶP VÔ HẠN) -->
+    <div class="card pomodoro-card">
+        <h3 id="timerPhase" class="timer-phase">🍅 POMODORO</h3>
+        
+        <!-- Bộ đếm Session -->
+        <div class="session-counter">Session: <span id="sessionCount">0</span></div>
+        
+        <div class="pomodoro-time" id="timerDisplay">25:00</div>
+        
+        <div class="pomodoro-input-wrapper" id="pomodoroSettings">
+            <div class="time-inputs">
+                <label>Học: <input type="number" id="workMinutes" value="25" min="1" max="120">p</label>
+                <label>Nghỉ: <input type="number" id="breakMinutes" value="5" min="1" max="30">p</label>
+            </div>
+        </div>
+        
+        <button class="btn pomodoro-btn" id="toggleTimerBtn">Bắt đầu tập trung</button>
+    </div>
+
+    <!-- 2. SUPER STRICT MODE CARD -->
+    <div class="card strict-mode-card">
+        <label class="switch-row strict-row">
+            <div class="strict-info">
+                <span class="strict-title">🔥 Super Strict Mode</span>
+                <span class="strict-desc">Khóa Feed FB/IG, CHỈ nhắn tin.</span>
+            </div>
+            <div class="switch">
+                <input type="checkbox" id="superStrictToggle">
+                <span class="slider strict-slider"></span>
+            </div>
+        </label>
+    </div>
+
+    <!-- 3. ẨN SHORTS & REELS CARD -->
+    <div class="card">
+        <h3 class="section-title">ẨN SHORTS & REELS</h3>
+        <div class="toggle-list">
+            <label class="switch-row">
+                <span>YouTube Shorts</span>
+                <div class="switch">
+                    <input type="checkbox" id="ytToggle">
+                    <span class="slider"></span>
+                </div>
+            </label>
+            <label class="switch-row">
+                <span>Facebook Reels</span>
+                <div class="switch">
+                    <input type="checkbox" id="fbToggle">
+                    <span class="slider"></span>
+                </div>
+            </label>
+            <label class="switch-row">
+                <span>Instagram Reels</span>
+                <div class="switch">
+                    <input type="checkbox" id="igToggle">
+                    <span class="slider"></span>
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <!-- 4. KHÓA TRANG WEB CARD -->
+    <div class="card">
+        <h3 class="section-title">KHÓA TRANG WEB</h3>
+        <div class="input-group">
+            <input type="text" id="siteInput" placeholder="VD: tiktok.com">
+            <button class="btn btn-success" id="addSiteBtn">+ Khóa</button>
+        </div>
+        <ul id="blockedList" class="blocked-list"></ul>
+    </div>
+
+    <!-- 5. CHẶN GAME (PC) CARD -->
+    <div class="card">
+        <h3 class="section-title">🎮 CHẶN GAME (PC)</h3>
+        <div class="instruction-box">
+            💡 <b>Hướng dẫn:</b> Nhập tên file thực thi (VD: <i>valorant.exe</i>). Hệ thống sẽ tự động quét và đóng xuyên suốt phiên Pomodoro.
+        </div>
+        <div class="input-group">
+            <input type="text" id="gameInput" placeholder="VD: steam.exe">
+            <button class="btn btn-warning" id="addGameBtn">+ Khóa</button>
+        </div>
+        <ul id="blockedGamesList" class="blocked-list"></ul>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
